@@ -1,0 +1,2 @@
+# Electricity_Demand_Forecasting_Backend
+Backend for Electricity demand forecasting project
