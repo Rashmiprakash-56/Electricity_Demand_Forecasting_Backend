@@ -8,10 +8,10 @@ RUN apt-get update && apt-get install -y \
     rm -rf /var/lib/apt/lists/*
 
 # Install Python dependencies
-COPY requirement.txt .
-RUN pip install --no-cache-dir -r requirement.txt
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy application code and data
+# Copy application code (data is fetched from HF Hub at runtime)
 COPY . .
 
 # HF Spaces requires port 7860

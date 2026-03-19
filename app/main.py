@@ -6,6 +6,7 @@ from app.routers import access_models
 from sqlalchemy.ext.asyncio import AsyncSession
 from contextlib import asynccontextmanager
 from app.core.config import settings
+from app.utils.data_fetcher import fetch_dataset_from_hub
 import mlflow
 ###
 from app.database import create_db_and_table,get_async_session,User
@@ -17,6 +18,8 @@ log = get_logger(__name__)
 
 @asynccontextmanager
 async def lifespan(app : FastAPI):
+    # Download dataset files from Hugging Face Hub (skips if already present)
+    fetch_dataset_from_hub()
     await create_db_and_table()
     yield
 

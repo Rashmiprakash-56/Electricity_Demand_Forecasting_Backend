@@ -30,6 +30,7 @@ class Settings():
     # Hugging Face Hub 
     HF_MODEL_REPO: str = os.getenv("HF_MODEL_REPO", "")   
     HF_TOKEN: str = os.getenv("HF_TOKEN", "")
+    HF_DATASET_REPO: str = os.getenv("HF_DATASET_REPO", "Rashmiprakash78/demand_and_weather")
     
     # MLflow
     MLFLOW_TRACKING_URI: str = os.getenv("MLFLOW_TRACKING_URI", "")   

@@ -8,6 +8,9 @@ venv/
 # Model artifacts
 artifacts/
 
+# Dataset (fetched from HF Hub at runtime)
+data/
+
 # MLflow
 mlruns/
 
